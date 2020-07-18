@@ -4,7 +4,11 @@
   "description": "A react boilerplate created to start your project in seconds - by Prathamesh",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.production.js",
+    "dev": "webpack-dev-server --open --config webpack.config.dev.js",
+    "dev-hot": "npm run dev ——hot",
+    "lint": "eslint --fix ./"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,39 @@
   "bugs": {
     "url": "https://github.com/prathamnemade/react-boilerplate/issues"
   },
-  "homepage": "https://github.com/prathamnemade/react-boilerplate#readme"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "homepage": "https://github.com/prathamnemade/react-boilerplate#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.6.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "html-webpack-plugin": "^4.3.0",
+    "husky": "^4.2.5",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.9"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.21",
+    "react-axe": "^3.5.3"
+  }
 }
